@@ -39,6 +39,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SouthernCross.Application\SouthernCross.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="scripts\main.ts" />
   </ItemGroup>
 

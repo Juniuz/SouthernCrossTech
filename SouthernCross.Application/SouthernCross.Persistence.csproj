@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Junius Dimasuhid</Authors>
+    <Company>Southern Cross Health Society</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SouthernCross.Data\SouthernCross.Data.csproj" />
+    <ProjectReference Include="..\SouthernCross.Domain\SouthernCross.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
