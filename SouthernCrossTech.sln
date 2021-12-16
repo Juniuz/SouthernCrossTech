@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouthernCross.Web", "SouthernCross.Web\SouthernCross.Web.csproj", "{31772806-29C5-4901-B576-6C5AF98BBBB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SouthernCross.Web", "SouthernCross.Web\SouthernCross.Web.csproj", "{31772806-29C5-4901-B576-6C5AF98BBBB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouthernCross.Data", "SouthernCross.Data\SouthernCross.Data.csproj", "{519050CE-EE78-4614-976D-2771CAC6A712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouthernCross.Domain", "SouthernCross.Domain\SouthernCross.Domain.csproj", "{9F75E4FC-05BF-462E-A8FF-99BAA32F011D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{31772806-29C5-4901-B576-6C5AF98BBBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31772806-29C5-4901-B576-6C5AF98BBBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31772806-29C5-4901-B576-6C5AF98BBBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{519050CE-EE78-4614-976D-2771CAC6A712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{519050CE-EE78-4614-976D-2771CAC6A712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{519050CE-EE78-4614-976D-2771CAC6A712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{519050CE-EE78-4614-976D-2771CAC6A712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F75E4FC-05BF-462E-A8FF-99BAA32F011D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F75E4FC-05BF-462E-A8FF-99BAA32F011D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F75E4FC-05BF-462E-A8FF-99BAA32F011D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F75E4FC-05BF-462E-A8FF-99BAA32F011D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
