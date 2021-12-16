@@ -1,13 +1,28 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "noImplicitAny": false,
     "noEmitOnError": true,
-    "removeComments": false,
+    "removeComments": true,
     "sourceMap": true,
-    "target": "es5"
+    "target": "es5",
+    "strictNullChecks": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./scripts",
+    "rootDir": "scripts",
+    "outDir": "scripts/dist",
+    "module": "commonjs",
+    "declaration": true
   },
+  "include": [
+    "scripts"
+  ],
   "exclude": [
+    "**/*.d.ts",
     "node_modules",
+    "definitions",
+    "dist",
+    "*.d.ts",
     "wwwroot"
   ]
 }
