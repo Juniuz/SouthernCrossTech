@@ -1,0 +1,135 @@
+﻿body {
+    margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+.navigation-bar {
+    background-color: #007db9;
+    overflow: hidden;
+    height: 65px;
+}
+    .navigation-bar ul {
+        margin: 8px 0 0 0;
+        list-style: none;
+    }
+
+    .navigation-bar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .navigation-bar a:hover {
+        color: #000;
+        text-decoration: none;
+    }
+
+.navigation-bar-nav {
+    border: 0;
+    padding: 0;
+}
+
+.side-navigation {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+    .side-navigation a {
+        padding: 10px 10px 10px 30px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #ccc;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .side-navigation a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .side-navigation .btn-close {
+        position: absolute;
+        top: 0;
+        right: 22px;
+        font-size: 40px;
+        margin-left: 50px;
+    }
+
+    .side-navigation a.side-menu-item {
+        text-wrap: none;
+    }
+
+#main {
+    transition: margin-left 0.5s;
+    padding: 20px;
+    overflow: hidden;
+    width: 100%;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+@media(max-width:568px) {
+    navigation-bar-nav {
+        display: none;
+    }
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem #000000;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
