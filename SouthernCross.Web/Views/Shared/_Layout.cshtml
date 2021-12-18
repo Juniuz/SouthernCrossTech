@@ -21,15 +21,15 @@
                 </a>
             </span>
             <ul class="navigation-bar-nav">
-                <li><a href="#">Member Search</a></li>
-                <li><a href="#">Search Result</a></li>
+                <li><a asp-controller="Member" asp-action="MemberSearch">Member Search</a></li>
+                <li><a asp-controller="Member" asp-action="SearchResult">Search Result</a></li>
             </ul>
         </nav>
 
         <div id="side-menu" class="side-navigation">
             <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-            <a href="#" class="side-menu-item">Member Search</a>
-            <a href="#" class="side-menu-item">Search Results</a>
+            <a asp-controller="Member" asp-action="MemberSearch" class="side-menu-item">Member Search</a>
+            <a asp-controller="Member" asp-action="SearchResult" class="side-menu-item">Search Results</a>
         </div>
     </header>
 
@@ -53,7 +53,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Southern Cross Medical Care Society - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Southern Cross Medical Care Society - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 
