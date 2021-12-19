@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SouthernCross.Web\SouthernCross.Web.csproj" />
+  </ItemGroup>
+
 </Project>
