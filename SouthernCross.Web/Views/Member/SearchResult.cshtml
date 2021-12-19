@@ -1,5 +1,10 @@
-﻿@model SouthernCross.Web.Models.MemberViewModel
+﻿@model IEnumerable<SouthernCross.Web.Models.MemberViewModel>
 
 <div id="search-result-container">
-
+    @{
+        foreach (MemberViewModel viewModel in Model)
+        {
+            
+        }
+    }
 </div>

@@ -1,3 +1,4 @@
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,8 +25,17 @@ namespace SouthernCross.Web
         {
             services.Configure<LiteDbOptions>(Configuration.GetSection("LiteDbOptions"));
             services.AddSingleton<ILiteDbContext, LiteDbContext>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            var builder = new ContainerBuilder();
+            builder.RegisterType<MemberService>().As<IMemberService>();
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
+            builder.RegisterType<MemberService>().As<IMemberService>();
+            builder.Build();
+
             services.AddTransient<IMemberService, MemberService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //services.AddScoped<IMemberRepository, MemberRepository>();
+
             services.AddControllersWithViews();
         }
 

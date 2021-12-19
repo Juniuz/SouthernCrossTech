@@ -17,8 +17,8 @@ namespace SouthernCross.Web.Controllers
 
         public MemberController(ILogger<MemberController> logger, IMemberService memberService)
         {
-            _logger = logger;
             _memberService = memberService;
+            _logger = logger;
         }
 
         public IActionResult MemberSearch()
@@ -29,6 +29,12 @@ namespace SouthernCross.Web.Controllers
         public IActionResult SearchResult()
         {
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await _memberService.FindAll());
         }
 
         [HttpGet("FindMember")]
