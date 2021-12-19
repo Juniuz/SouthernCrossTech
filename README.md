@@ -22,7 +22,7 @@ A single page application that enable a user to search for a member using the me
 * No Data Mapper inside repository
 
 ## Needs Improvement
-* Logging
+* Exception Logging
 * Apply CQRS
 * Create a separate API layer
 
