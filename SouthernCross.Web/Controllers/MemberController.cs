@@ -1,18 +1,22 @@
 ﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SouthernCross.Web.Dto;
 using SouthernCross.Web.Models;
+using SouthernCross.Web.Services;
 
 namespace SouthernCross.Web.Controllers
 {
     public class MemberController : Controller
     {
         private readonly ILogger<MemberController> _logger;
+        private readonly IMemberService _memberService;
 
-        public MemberController(ILogger<MemberController> logger)
+        public MemberController(ILogger<MemberController> logger, IMemberService memberService)
         {
             _logger = logger;
+            _memberService = memberService;
         }
 
         public IActionResult MemberSearch()
@@ -26,18 +30,21 @@ namespace SouthernCross.Web.Controllers
         }
 
         [HttpGet("FindMember")]
-        public IActionResult FindMember(MemberIdentification memberIdentification)
+        public async Task<IActionResult> FindMemberAsync(MemberIdentification memberIdentification)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return ValidationProblem("The provided member identification is invalid");
+                return Ok(await _memberService.SearchMemberAsync(memberIdentification.PolicyNumber, memberIdentification.CardNumber));
             }
 
-            return Ok();
+            const string message = "The provided member identification is invalid";
+
+            _logger.LogError(message);
+            return ValidationProblem(message);
         }
 
         [HttpGet("DisplayResult")]
-        public IActionResult DisplayResult()
+        public async Task<IActionResult> DisplayResultAsync()
         {
             var memberViewModel = new MemberViewModel();
             return Ok(memberViewModel);

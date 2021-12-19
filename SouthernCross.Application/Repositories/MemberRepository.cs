@@ -16,12 +16,12 @@ namespace SouthernCross.Persistence.Repositories
 
         public IEnumerable<Member> GetAllMembers()
         {
-            return _liteDbContext.Database.GetCollection<Member>().FindAll();
+            return _liteDbContext.Database.GetCollection<Member>("Member").FindAll();
         }
 
-        public IEnumerable<Member> GetMember(int policyNumber, int cardNumber)
+        public IEnumerable<Member> GetMembers(int policyNumber, int cardNumber)
         {
-            return _liteDbContext.Database.GetCollection<Member>().Find(m => m.PolicyNumber == policyNumber || m.CardNumber == cardNumber);
+            return _liteDbContext.Database.GetCollection<Member>("Member").Find(m => m.PolicyNumber == policyNumber || m.CardNumber == cardNumber);
         }
     }
 }

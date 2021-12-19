@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SouthernCross.Data;
 using SouthernCross.Data.Context;
+using SouthernCross.Persistence;
 using SouthernCross.Web.Services;
 
 namespace SouthernCross.Web
@@ -23,6 +24,7 @@ namespace SouthernCross.Web
         {
             services.Configure<LiteDbOptions>(Configuration.GetSection("LiteDbOptions"));
             services.AddSingleton<ILiteDbContext, LiteDbContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IMemberService, MemberService>();
             services.AddControllersWithViews();
         }
