@@ -14,7 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{AF
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouthernCross.Persistence", "SouthernCross.Application\SouthernCross.Persistence.csproj", "{9D77096A-9C68-4471-90F4-CB4759C3DA45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SouthernCross.Persistence", "SouthernCross.Application\SouthernCross.Persistence.csproj", "{9D77096A-9C68-4471-90F4-CB4759C3DA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SouthernCrossWeb.Tests", "SouthernCrossWeb.Tests\SouthernCrossWeb.Tests.csproj", "{6A6DCD3F-FF95-4C81-A290-5F5FD54CF14D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{9D77096A-9C68-4471-90F4-CB4759C3DA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D77096A-9C68-4471-90F4-CB4759C3DA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D77096A-9C68-4471-90F4-CB4759C3DA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6DCD3F-FF95-4C81-A290-5F5FD54CF14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6DCD3F-FF95-4C81-A290-5F5FD54CF14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6DCD3F-FF95-4C81-A290-5F5FD54CF14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6DCD3F-FF95-4C81-A290-5F5FD54CF14D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

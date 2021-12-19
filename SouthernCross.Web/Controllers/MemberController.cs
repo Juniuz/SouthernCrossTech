@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics;
 using System.Threading.Tasks;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SouthernCross.Web.Dto;
 using SouthernCross.Web.Models;
 using SouthernCross.Web.Services;
+using SouthernCross.Web.Validators;
 
 namespace SouthernCross.Web.Controllers
 {
@@ -34,7 +36,13 @@ namespace SouthernCross.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                return Ok(await _memberService.SearchMemberAsync(memberIdentification.PolicyNumber, memberIdentification.CardNumber));
+                var memberIdentifcationValidator = new MemberIdentificationValidator();
+                ValidationResult validator = await memberIdentifcationValidator.ValidateAsync(memberIdentification);
+
+                if (validator.IsValid)
+                {
+                    return Ok(await _memberService.SearchMemberAsync(memberIdentification.PolicyNumber, memberIdentification.CardNumber));
+                }
             }
 
             const string message = "The provided member identification is invalid";
