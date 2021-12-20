@@ -26,3 +26,6 @@ A single page application that enable a user to search for a member using the me
 * Apply CQRS
 * Create a separate API layer
 
+## Pending Issues
+* DI container did not work
+
