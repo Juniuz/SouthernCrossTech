@@ -1,4 +1,5 @@
-﻿using LiteDB;
+﻿using System.IO;
+using LiteDB;
 using Microsoft.Extensions.Options;
 
 namespace SouthernCross.Data.Context
@@ -7,9 +8,22 @@ namespace SouthernCross.Data.Context
     {
         public LiteDbContext(IOptions<LiteDbOptions> options)
         {
-            Database = new LiteDatabase(options.Value.DatabaseLocation);
+            string directoryPath = CreateDatabaseDirectory(options.Value.FolderName);
+            Database = new LiteDatabase($@"{directoryPath}\{options.Value.DatabaseName}");
         }
 
         public LiteDatabase Database { get; }
+
+        private static string CreateDatabaseDirectory(string folderName)
+        {
+            var path = $@"{Directory.GetCurrentDirectory()}\{folderName}";
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            return path;
+        }
     }
 }

@@ -2,6 +2,7 @@
 {
     public class LiteDbOptions
     {
-        public string DatabaseLocation { get; set; }
+        public string FolderName { get; set; }
+        public string DatabaseName { get; set; }
     }
 }
