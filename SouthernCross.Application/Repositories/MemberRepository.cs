@@ -7,9 +7,9 @@ namespace SouthernCross.Persistence.Repositories
 {
     public class MemberRepository : Repository<Member>, IMemberRepository
     {
-        private readonly LiteDbContext _liteDbContext;
+        private readonly ILiteDbContext _liteDbContext;
 
-        public MemberRepository(LiteDbContext liteDbContext) : base(liteDbContext)
+        public MemberRepository(ILiteDbContext liteDbContext) : base(liteDbContext)
         {
             _liteDbContext = liteDbContext;
         }

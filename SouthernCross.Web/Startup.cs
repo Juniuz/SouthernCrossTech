@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SouthernCross.Data;
 using SouthernCross.Data.Context;
-using SouthernCross.Persistence;
 using SouthernCross.Web.Services;
 
 namespace SouthernCross.Web
@@ -24,19 +23,22 @@ namespace SouthernCross.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<LiteDbOptions>(Configuration.GetSection("LiteDbOptions"));
+
             services.AddSingleton<ILiteDbContext, LiteDbContext>();
-
-            var builder = new ContainerBuilder();
-            builder.RegisterType<MemberService>().As<IMemberService>();
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
-            builder.RegisterType<MemberService>().As<IMemberService>();
-            builder.Build();
-
             services.AddTransient<IMemberService, MemberService>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            //services.AddScoped<IMemberRepository, MemberRepository>();
 
             services.AddControllersWithViews();
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            // Add any Autofac modules or registrations.
+            // This is called AFTER ConfigureServices so things you
+            // register here OVERRIDE things registered in ConfigureServices.
+            //
+            // You must have the call to `UseServiceProviderFactory(new AutofacServiceProviderFactory())`
+            // when building the host or this won't be called.
+            builder.RegisterModule(new AutofacModule());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,11 +57,8 @@ namespace SouthernCross.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints => { endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}"); });
         }
     }

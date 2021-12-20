@@ -5,9 +5,9 @@ namespace SouthernCross.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly LiteDbContext _dbContext;
+        private readonly ILiteDbContext _dbContext;
 
-        public UnitOfWork(LiteDbContext dbContext)
+        public UnitOfWork(ILiteDbContext dbContext)
         {
             _dbContext = dbContext;
             Members = new MemberRepository(_dbContext);

@@ -7,9 +7,9 @@ namespace SouthernCross.Persistence.Generic
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private readonly LiteDbContext _context;
+        private readonly ILiteDbContext _context;
 
-        public Repository(LiteDbContext liteDbContext)
+        public Repository(ILiteDbContext liteDbContext)
         {
             _context = liteDbContext;
         }
