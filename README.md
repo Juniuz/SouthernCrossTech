@@ -11,6 +11,8 @@ A single page application that enable a user to search for a member using the me
 * [.NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
 * [LiteDB 5.0.11](https://www.litedb.org/) 
 * [Bootsrap v4.0](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+* [FluentValidation ASP.NET Core 10.3.6](https://docs.fluentvalidation.net/en/latest/index.html)
+* [Autofac 6.3.0](https://autofac.org/)
 
 ## Design Patterns
 * Repository Pattern
