@@ -19,8 +19,8 @@ A single page application that enable a user to search for a member using the me
 * [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
 
 ## Limitations
-* No operation service 
-* Decouple Service Layer from the Web
+* No implementation of Operation service layer
+* Service Layer is not decouple from the Web application
 * No Data Mapper inside repository
 
 ## Needs Improvement
