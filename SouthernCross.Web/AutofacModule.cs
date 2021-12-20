@@ -16,7 +16,7 @@ namespace SouthernCross.Web
             // It was then registered with Autofac using the Populate method. All of this starts
             // with the `UseServiceProviderFactory(new AutofacServiceProviderFactory())` that happens in Program and registers Autofac
             // as the service provider.
-            builder.Register(c => new LiteDbOptions());
+            builder.RegisterInstance(new LiteDbOptions());
 
             builder.Register(c => new LiteDbContext(c.Resolve<IOptions<LiteDbOptions>>())).As<ILiteDbContext>().SingleInstance();
 

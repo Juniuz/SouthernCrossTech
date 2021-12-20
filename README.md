@@ -27,7 +27,7 @@ A single page application that enable a user to search for a member using the me
 * Exception Logging
 * Apply CQRS
 * Create a separate API layer
+* DI container is registered through Autofac module inside the web application
 
 ## Pending Issues
-* DI container did not work
 
