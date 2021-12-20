@@ -2,9 +2,12 @@
 
 <div id="search-result-container">
     @{
-        foreach (MemberViewModel viewModel in Model)
+        if (Model.Any())
         {
+            foreach (MemberViewModel viewModel in Model)
+            {
             
+            }
         }
     }
 </div>
